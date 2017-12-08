@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorator="layouts/main">
+<head>
+<title>SFJ - Minden napra egy sztori</title>
+</head>
+<body>
+
+	<div layout:fragment="loginContent">
+
+		<form name="login" th:action="@{/login}" method="post" class="form-signin">
+			<h2 class="form-signin-heading">Kérlek jelentkezz be</h2>
+			<div id="err" th:if="${param.error}" class="alert alert-danger">Hibás felhasználói név és jelszó</div>
+			<div th:if="${param.logout}" class="alert alert-success">Sikeresen kijelentkeztél</div>
+			<label for="username" class="sr-only">Felhasználói név</label> 
+			    <input type="text" id="username" name="username" class="form-control" placeholder="Felhasználói név" required="true" /> 
+			<label for="password" class="sr-only">Jelszó</label> 
+			    <input type="password" id="password" name="password" class="form-control" placeholder="Jelszó" required="true" />
+			<div class="checkbox">
+				<label> <input id="remember-me" name="remember-me" type="checkbox" /> Emlékezz rám
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Bejelentkezés</button>
+		</form>
+
+	</div>
+
+</body>
+</html>

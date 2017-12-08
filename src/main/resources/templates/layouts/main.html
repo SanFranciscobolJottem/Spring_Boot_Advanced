@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SFJ - Egy sztori minden napra</title>
+	
+	<link rel="stylesheet" href="../static/css/blog.css" th:href="@{/css/blog.css}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />	
+	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+	
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<div class="container">
+  		 
+		<nav class="navbar navbar-default">
+		    <div class="container-fluid">
+		       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				    <ul class="nav navbar-nav">
+				        <li class="active"><a href="/">Kezdőoldal</a></li>
+				        <li class=""><a href="/stories">Sztorik</a></li>
+				        <li class=""><a href="/bloggers">Bloggerek</a></li>
+				    </ul>
+				    <div class="navbar-text navbar-right">
+				    Üdvözlünk <span sec:authentication="name">Anonymous </span>
+			           <form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post" class="form-inline">
+				    		| <a href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Kijelentkezés</a>
+				      </form>
+				    </div>
+				</div>
+		    </div>
+		</nav>
+		
+		<div layout:fragment="loginContent">
+		</div>
+
+
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>		
+		<footer>
+			<p>San Franciscoból Jöttem - Az eredeti template összeállítója: http://therealdanvega.com</p>
+		</footer>
+	
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+</body>
+</html>
